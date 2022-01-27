@@ -1,0 +1,28 @@
+﻿@using vize_projesi_dpList.Models
+@model List<Personel>
+
+@{
+    ViewData["Title"] = "BirimDetay";
+    Layout = "~/Views/Shared/_yeniLayout.cshtml";
+}
+<table>
+    <tr class="table table-bordered">
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+
+
+        @foreach (var item in Model)
+        {
+        <tr class="table table-bordered">
+
+            <td>@item.PersonelID</td>
+            <td>@item.Ad</td>
+            <td>@item.Soyad</td>
+            <td>@item.Sehir</td>
+
+
+        </tr>
+    }
+    </table>

@@ -1,0 +1,30 @@
+﻿@using vize_projesi_dpList.Models;
+@model List<Birim>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_yeniLayout.cshtml";
+}
+
+<table>
+    <tr class="table table-bordered">
+        <th>Birim ID</th>
+        <th>Birim</th>
+        <th>Sil</th>
+        <th>Güncelleme</th>
+        <th>Detaylar</th>
+
+        @foreach (var item in Model)
+        {
+        <tr class="table table-bordered">
+
+            <td>@item.BirimID</td>
+            <td>@item.BirimAd</td>
+            <td><a href="/Birim/BirimSil/@item.BirimID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Birim/BirimGetir/@item.BirimID" class="btn btn-success">Güncelleme</a></td>
+            <td><a href="/Birim/BirimDetay/@item.BirimID" class="btn btn-dark">Detaylar</a></td>
+        </tr>
+    }
+    </table>
+    <br />
+    <a href="/Birim/YeniBirim" class="btn btn-primary">Yeni Birim</a>
+
